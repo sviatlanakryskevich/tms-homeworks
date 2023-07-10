@@ -1,3 +1,4 @@
 rootProject.name = 'tms-homeworks'
 include 'lesson2'
+include 'lesson3'
 
