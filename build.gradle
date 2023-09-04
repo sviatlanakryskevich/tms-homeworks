@@ -23,6 +23,14 @@ allprojects {
     }
 }
 
+allprojects {
+    apply plugin: 'java'
+
+    dependencies {
+        implementation 'org.postgresql:postgresql:42.6.0'
+    }
+}
+
 dependencies {
 
     testImplementation platform('org.junit:junit-bom:5.9.1')
