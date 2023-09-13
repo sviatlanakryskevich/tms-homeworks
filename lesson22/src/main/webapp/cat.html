@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Martin</title>
+  <link href="cat.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<div class="bg bg-opacity-10" style="background: url('bg3.jpg') no-repeat center/cover ">
+    <div class="container ">
+        <ul class="nav nav-underline justify-content-center" style="font-size: 25px;">
+            <li class="nav-item" style="margin-right: 20px;">
+                <a class="nav-link text-success-emphasis active" aria-current="page" href="#">Главная</a>
+            </li>
+            <li class="nav-item" style="margin-right: 20px;">
+                <a class="nav-link text-success-emphasis" href="#accordionPanelsStayOpenExample">Обо мне</a>
+            </li>
+            <li class="nav-item" style="margin-right: 20px;">
+                <a class="nav-link text-success-emphasis" href="#carouselExampleInterval">Фото</a>
+            </li>
+            <li class="nav-item" style="margin-right: 20px;">
+                <a class="nav-link text-success-emphasis" href="#description">Характер</a>
+            </li>
+        </ul>
+
+
+        <div class="card mb-3 border-light-subtle" style="max-width: 800px; margin: 50px 250px 70px 250px;">
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <img src="main.jpg" class="img-fluid rounded-start" alt="cat">
+                </div>
+                <div class="col-md-7" style="background-color: #FFFAFA;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size: 30px; text-align: center;">Знакомство</h5>
+                        <p class="card-text" style="font-size: 18px; line-height: 35px"> <b>Имя:</b> Мартин <br>
+                            <b>Пол:</b> мужской <br> <b>Возраст:</b> 2.5 года <br> <b>Порода:</b> Шотландский прямоухий(скоттиш-страйт)
+                            <br><b>Страна рождения:</b>  Беларусь <br><b>Место проживания:</b>  Гданьск <br><b>Цвет глаз:</b>  янтарный
+                            <br><b>Характер:</b>  спокойный</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion" id="accordionPanelsStayOpenExample" style="margin-top: 50px">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne"
+                            aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" style="font-size: 18px;">
+                        <b>Рандомные факты</b>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body" style="background-color: #FFF5EE; line-height: 40px;">
+                        <ul style="font-size: 20px; font-weight: lighter">
+                            <li>Побывал в 3 странах.</li>
+                            <li>Летал 2 раза самолетом.</li>
+                            <li>Люблю компанию(как людей, так и других животных).</li>
+                            <li>Не люблю рыбу.</li>
+                            <li>Разговариваю редко и всегда по делу.</li>
+                            <li>Люблю вычесываться и спокойно отношусь к стрижке когтей.</li>
+                            <li>Люблю пробовать любые растения на вкус. </li>
+                            <li><b>P.S. Помни, вода из чужих стаканов всегда вкуснее.</b> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
+                            aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo" style="font-size: 18px;" >
+                       <b>Мои хобби</b>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body" style="background-color: #FFF5EE; line-height: 40px;">
+                        <ul style="font-size: 20px; font-weight: lighter">
+                            <li>Люблю гулять на улице, в последнее время предпочитаю балкон для спокойных прогулок.</li>
+                            <li>Обожаю сидеть на ручках и разглядывать все вокруг.</li>
+                            <li>Люблю охотиться за всем,что движется или летает.</li>
+                            <li>Всегда ворую черешню из тарелок.</li>
+                            <li>Люблю дробное питание по 10 раз на день.</li>
+                            <li><b>P.S. Я всегда за любой кипишь, но больше всего люблю сладкий сон.</b> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="width: 800px; display: block; margin: 0 auto; padding: 50px 0px">
+            <div class="carousel-inner" style="max-height: 600px; border: 1px solid white; border-radius: 9%;">
+                <div class="carousel-item active">
+                    <img src="corb1.jpg" class="d-block w-100" alt="corb">
+                </div>
+                <div class="carousel-item">
+                    <img src="learn1.jpg" class="d-block w-100" alt="learn">
+                </div>
+                <div class="carousel-item">
+                    <img src="box1.jpg" class="d-block w-100" alt="box">
+                </div>
+                <div class="carousel-item">
+                    <img src="floor.jpg" class="d-block w-100" alt="me">
+                </div>
+                <div class="carousel-item">
+                    <img src="bed.jpg" class="d-block w-100" alt="me">
+                </div>
+                <div class="carousel-item">
+                    <img src="2.jpg" class="d-block w-100" alt="me">
+                </div>
+                <div class="carousel-item">
+                    <img src="1.jpg" class="d-block w-100" alt="me">
+                </div>
+                <div class="carousel-item">
+                    <img src="sleep1.jpg" class="d-block w-100" alt="sleep">
+                </div>
+                <div class="carousel-item">
+                    <img src="table1.jpg" class="d-block w-100" alt="box">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div id="description" style="display: block; margin: 0 auto; padding: 50px;">
+            <h2 style="text-align: center; text-decoration: underline;"><b >Мои качества:</b></h2>
+            <ol>
+                <li style="margin-bottom: 10px;">
+                    Дружелюбный <br>
+                    <span class="placeholder col-10 bg-primary"></span> 100%
+                </li>
+                <li style="margin-bottom: 10px;">
+                     Разговорчивый<br>
+                    <span class="placeholder col-2 bg-primary"></span> 20%
+                </li>
+                <li style="margin-bottom: 10px;">
+                    Любопытный <br>
+                    <span class="placeholder col-10 bg-primary"></span> 100%
+                </li>
+                <li style="margin-bottom: 10px;">
+                    Подвижный <br>
+                    <span class="placeholder col-8 bg-primary"></span> 80%
+                </li>
+                <li style="margin-bottom: 10px;">
+                    Игривый <br>
+                    <span class="placeholder col-7 bg-primary"></span> 70%
+                </li>
+                <li style="margin-bottom: 10px;">
+                    Пугливый <br>
+                    <span class="placeholder col-5 bg-primary"></span> 50%
+                </li>
+                <li style="margin-bottom: 10px;">
+                    Ленивый <br>
+                    <span class="placeholder col-5 bg-primary"></span> 50%
+                </li>
+            </ol>
+        </div>
+
+       <div class="col-md-12" style="display: flex; justify-content: center; align-items: center; min-height: 150px; padding-bottom: 60px;">
+           <div style="width: 100px;  padding: 10px;">
+               <img src="sticker.webp" alt="sticker" style="width: 100%">
+           </div>
+           <div class="text-success-emphasis"style="padding: 10px; ">
+               <h2 >Рад нашему знакомству!</h2>
+           </div>
+
+       </div>
+
+    </div>
+</div>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
