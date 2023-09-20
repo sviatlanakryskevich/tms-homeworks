@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.skv.tms.domain.Student" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Students</title>
@@ -22,22 +23,15 @@
         </form>
         <h2>Student's list:</h2> <hr>
         <ol>
-            <%
-                Object studentsOpt = request.getAttribute("students");
-
-                if(studentsOpt !=null){
-                    List<Student> students = (List<Student>)request.getAttribute("students");
-                    for(Student student : students){
-                        out.print("<form method='post' action= '/delete' >");
-                        out.print("<li>" + "Student: "+ student.getName() + ", age:" + student.getAge()
-                                + ", city:" + student.getCity() + ".");
-                        out.print("<input type='hidden' name='deleteId' value='" + student.getId() + "'>");
-                        out.print("<input class='delete' type='submit' value='delete'>");
-                        out.print("</li>");
-                        out.print("</form>");
-                    }
-                }
-            %>
+           <c:forEach items="${students}" var="student">
+               <form action="/delete" method="post">
+                   <li>
+                       Student: ${student.name}, age: ${student.age}, city: ${student.city}.
+                       <input type="hidden" name="deleteId" value="${student.id}">
+                       <input class="delete" type="submit" value="delete">
+                   </li>
+               </form>
+           </c:forEach>
         </ol>
     </div>
 </div>
