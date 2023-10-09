@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.tms.spring.service.HorseRacingServiceImpl" name="horseRacingService">
+      <constructor-arg name="betService" ref="betService"/>
+        <constructor-arg name="player" ref="player"/>
+    </bean>
+    <bean class="com.tms.spring.domain.Wallet" name="wallet">
+        <constructor-arg name="balance" value="1000"/>
+    </bean>
+    <bean class="com.tms.spring.service.BetServiceImpl" name="betService"/>
+    <bean class="com.tms.spring.domain.Horse" name="horse1">
+        <constructor-arg name="name" value="horse1"/>
+    </bean>
+    <bean class="com.tms.spring.domain.Horse" name="horse2">
+        <constructor-arg name="name" value="horse2"/>
+    </bean>
+    <bean class="com.tms.spring.domain.Horse" name="horse3">
+        <constructor-arg name="name" value="horse3"/>
+    </bean>
+    <bean class="com.tms.spring.domain.Rider" name="rider1">
+        <constructor-arg name="name" value="rider1"/>
+    </bean>
+    <bean class="com.tms.spring.domain.Rider" name="rider2">
+        <constructor-arg name="name" value="rider2"/>
+    </bean>
+    <bean class="com.tms.spring.domain.Rider" name="rider3">
+        <constructor-arg name="name" value="rider3"/>
+    </bean>
+    <bean class="com.tms.spring.domain.Pair" name="pair1">
+        <constructor-arg name="horse" ref="horse1"/>
+        <constructor-arg name="rider" ref="rider1"/>
+        <constructor-arg name="speed" value="1.0"/>
+        <constructor-arg name="number" value="1"/>
+    </bean>
+    <bean class="com.tms.spring.domain.Pair" name="pair2">
+        <constructor-arg name="horse" ref="horse2"/>
+        <constructor-arg name="rider" ref="rider2"/>
+        <constructor-arg name="speed" value="1.0"/>
+        <constructor-arg name="number" value="2"/>
+    </bean>
+    <bean class="com.tms.spring.domain.Pair" name="pair3">
+        <constructor-arg name="horse" ref="horse3"/>
+        <constructor-arg name="rider" ref="rider3"/>
+        <constructor-arg name="speed" value="1.0"/>
+        <constructor-arg name="number" value="2"/>
+    </bean>
+    <bean class="com.tms.spring.domain.Player" name="player">
+        <constructor-arg name="name" value="player"/>
+        <constructor-arg name="wallet" ref="wallet"/>
+    </bean>
+</beans>
