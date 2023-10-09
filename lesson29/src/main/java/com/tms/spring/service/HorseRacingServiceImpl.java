@@ -1,5 +1,6 @@
 package com.tms.spring.service;
 
+import com.tms.spring.domain.Benchmark;
 import com.tms.spring.domain.Pair;
 import com.tms.spring.domain.Player;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,9 @@ public class HorseRacingServiceImpl implements HorseRacingService{
         this.pairs = pairs;
     }
 
+
     @Override
+    @Benchmark
     public void startRace() throws InterruptedException {
         for (int i = 0; i < pairs.size(); i++) {
             System.out.println("Pair " + (i + 1) + ":" + pairs.get(i));

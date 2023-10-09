@@ -4,9 +4,11 @@ import com.tms.spring.domain.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
 @ComponentScan({"com.tms.spring.service", "com.tms.spring.domain"})
+@EnableAspectJAutoProxy
 public class AppConfig {
     @Bean
     Horse horse1(){
