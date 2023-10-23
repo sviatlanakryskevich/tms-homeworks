@@ -2,6 +2,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="sp" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+
 <html>
 <head>
     <title>Form</title>
@@ -11,11 +13,11 @@
 <a href="/form?lang=ru">RUS</a>
 <sp:message code="label.title"/> <br>
 Add new user
-<form action="/form" method="post">
-    <input type="text" name="name" placeholder="user's name"> ${nameError}<br>
-    <input type="text" name="role" placeholder="user's role">${roleError} <br>
-    <input type="submit" value="Add"> <br>
-</form>
+<sf:form action="/form" method="post" modelAttribute="user">
+    <sf:input type="text" path="name"/><sf:errors path="name"/> <br>
+    <sf:input type="text" path="role"/><sf:errors path="role"/><br>
+    <sf:button>Add</sf:button>
+</sf:form>
 
 <ol>
     <c:forEach var="user" items="${users}">
