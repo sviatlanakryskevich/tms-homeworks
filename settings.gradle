@@ -27,4 +27,5 @@ include 'lesson29'
 include 'lesson31-spring-web'
 include 'lesson32'
 include 'lesson34-hibernate'
+include 'lesson35-hibernate-crud'
 
