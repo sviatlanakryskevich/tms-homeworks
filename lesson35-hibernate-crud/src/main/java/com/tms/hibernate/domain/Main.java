@@ -1,8 +1,10 @@
 package com.tms.hibernate.domain;
 
 import com.tms.hibernate.config.HibernateConfig;
+import com.tms.hibernate.dto.UserSearchDto;
 import com.tms.hibernate.entity.TaskEntity;
 import com.tms.hibernate.entity.UserEntity;
+import com.tms.hibernate.service.CriteriaService;
 import com.tms.hibernate.service.TaskService;
 import com.tms.hibernate.service.UserService;
 import org.hibernate.Session;
@@ -77,12 +79,34 @@ public class Main {
         taskById3.setStatus(Status.IN_PROGRESS);
         taskService.update(taskById3);
 
-        List<UserEntity> userWithActiveTasks = service.findUserWithActiveTasks();
+        /*List<UserEntity> userWithActiveTasks = service.findUserWithActiveTasks();
         List<UserEntity> allUsers = service.getAllUsers();
         for (UserEntity user : allUsers) {
             taskService.deleteByUser(user);
             service.delete(user);
-        }
+        }*/
+        UserSearchDto search1 = UserSearchDto.builder()
+                .birthdayFrom(LocalDate.of(1980, 8, 23))
+                .birthdayTo(LocalDate.of(2000, 4, 7))
+                .role(Role.USER)
+                .status(Status.IN_PROGRESS)
+                .build();
+        UserSearchDto search2 = UserSearchDto.builder()
+                .role(Role.SUPPORT)
+                .status(Status.NEW)
+                .build();
+        UserSearchDto search3 = UserSearchDto.builder()
+                .birthdayFrom(LocalDate.of(1980, 8, 23))
+                .birthdayTo(LocalDate.of(1990, 4, 7))
+                .status(Status.DONE)
+                .build();
 
+        CriteriaService criteriaService = new CriteriaService();
+        System.out.println("--------------1");
+        criteriaService.doSearch(search1);
+        System.out.println("--------------2");
+        criteriaService.doSearch(search2);
+        System.out.println("--------------3");
+        criteriaService.doSearch(search3);
     }
 }

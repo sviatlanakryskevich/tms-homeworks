@@ -16,7 +16,7 @@ public class HibernateConfig {
         configuration.setProperty("hibernate.connection.password", "nikolaeva0628");
         configuration.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL95Dialect");
-        configuration.setProperty("hibernate.show_sql", "true");
+        configuration.setProperty("hibernate.show_sql", "false");
         configuration.setProperty("hibernate.hbm2ddl.auto", "create-drop");
 
         configuration.addAnnotatedClass(UserEntity.class);
