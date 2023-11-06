@@ -76,11 +76,12 @@ public class Main {
         TaskEntity taskById3 = taskService.getTaskById(savedTask3);
         taskById3.setStatus(Status.IN_PROGRESS);
         taskService.update(taskById3);
+        taskService.getTasksByUser(savedUser1);
 
         List<UserEntity> userWithActiveTasks = service.findUserWithActiveTasks();
         List<UserEntity> allUsers = service.getAllUsers();
         for (UserEntity user : allUsers) {
-            taskService.deleteByUser(user);
+            taskService.deleteByUser(user.getId());
             service.delete(user);
         }
 

@@ -1,10 +1,12 @@
 package com.tms.hibernate.service;
 
 import com.tms.hibernate.config.HibernateConfig;
+import com.tms.hibernate.domain.Status;
 import com.tms.hibernate.entity.TaskEntity;
 import com.tms.hibernate.entity.UserEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -48,17 +50,18 @@ public class TaskService {
         session.close();
     }
 
-    public void deleteByUser(UserEntity user) {
-        List<TaskEntity> tasksByUser = getTasksByUser(user);
+    public void deleteByUser(Integer userId) {
+        List<TaskEntity> tasksByUser = getTasksByUser(userId);
         for (TaskEntity taskEntity : tasksByUser) {
             delete(taskEntity);
         }
     }
-    public List<TaskEntity> getTasksByUser(UserEntity user){
+    public List<TaskEntity> getTasksByUser(Integer userId){
         Session session = HibernateConfig.create();
         Transaction transaction = session.beginTransaction();
-
-        List<TaskEntity> tasks = user.getTasks();
+        Query<TaskEntity> query = session.createQuery( "select t from TaskEntity as t where user.id = ?1", TaskEntity.class);
+        query.setParameter(1, userId);
+        List<TaskEntity> tasks = query.list();
         System.out.println(tasks);
         transaction.commit();
         session.close();
