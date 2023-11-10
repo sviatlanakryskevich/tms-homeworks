@@ -3,3 +3,12 @@ spring:
     view:
       prefix: /pages/
       suffix: .jsp
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_boot_movie
+    username: postgres
+    password: nikolaeva0628
+server:
+  port: 8080
