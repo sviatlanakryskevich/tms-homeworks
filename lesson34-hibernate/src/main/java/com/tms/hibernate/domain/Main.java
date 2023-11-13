@@ -1,18 +1,13 @@
 package com.tms.hibernate.domain;
 
-import com.tms.hibernate.config.HibernateConfig;
+
 import com.tms.hibernate.entity.PersonEntity;
 import com.tms.hibernate.entity.PhoneEntity;
 import com.tms.hibernate.service.PhoneService;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
-import static org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build;
+
 
 public class Main {
     public static void main(String[] args) {
