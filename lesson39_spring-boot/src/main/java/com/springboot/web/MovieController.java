@@ -6,10 +6,7 @@ import com.springboot.dto.MovieDto;
 import com.springboot.service.MovieService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -32,6 +29,16 @@ public class MovieController {
     public String save(MovieDto request){
         service.save(request);
         return  "redirect:/";
+    }
+
+    @PostMapping("/update/{id}")
+    public ModelAndView update(@PathVariable(name = "id") Integer id,
+                         @RequestParam(name = "rating") Double rating){
+        ModelAndView modelAndView = new ModelAndView(MAIN_PAGE);
+        service.updateRating(id, rating);
+        modelAndView.addObject("movies", service.findAll());
+        modelAndView.addObject("genres", Genre.values());
+        return  modelAndView;
     }
 
     /*@GetMapping("/get")
