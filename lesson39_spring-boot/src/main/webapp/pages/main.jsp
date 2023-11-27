@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%--<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
@@ -23,9 +23,9 @@
     </c:forEach>
 </ul>
 
-<%--<form action="/get" method="get">
+&lt;%&ndash;<form action="/get" method="get">
     <input type="text" name="name" placeholder="name of movie"><br>
     <input type="submit" value="Find">
-</form>--%>
+</form>&ndash;%&gt;
 </body>
-</html>
+</html>--%>

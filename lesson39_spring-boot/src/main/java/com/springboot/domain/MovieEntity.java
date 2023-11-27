@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 
 @Data
@@ -25,4 +24,8 @@ public class MovieEntity {
     private Genre genre;
     private Integer yearRelease;
     private Double rating;
+
+
+    @Version
+    private Integer version;
 }
