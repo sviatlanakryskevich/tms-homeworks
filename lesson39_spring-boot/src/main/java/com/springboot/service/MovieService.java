@@ -2,6 +2,7 @@ package com.springboot.service;
 
 import com.springboot.domain.MovieEntity;
 import com.springboot.dto.MovieDto;
+import com.springboot.dto.MovieSearchDto;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;
@@ -11,7 +12,6 @@ public interface MovieService {
     List<MovieDto> findAll();
     void save(MovieDto request);
     void updateRating(Integer id, Double rating);
-
-    /*List<MovieEntity> findByName(String name);*/
+    List<MovieEntity> findBySpecification(MovieSearchDto movieSearchDto);
 
 }
