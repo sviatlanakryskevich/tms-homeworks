@@ -3,6 +3,7 @@ package com.springboot.web;
 import com.springboot.domain.Genre;
 import com.springboot.domain.MovieEntity;
 import com.springboot.dto.MovieDto;
+import com.springboot.dto.MovieSearchDto;
 import com.springboot.service.MovieService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -41,14 +42,14 @@ public class MovieController {
         return  modelAndView;
     }
 
-    /*@GetMapping("/get")
-    public ModelAndView getByName(@RequestParam(name = "name") String name){
+    @PostMapping("/search")
+    public ModelAndView findBySpecification(MovieSearchDto dto){
         ModelAndView modelAndView = new ModelAndView(MAIN_PAGE);
-        List<MovieEntity> byName = service.findByName(name);
+        List<MovieEntity> bySpecification = service.findBySpecification(dto);
         modelAndView.addObject("movies", service.findAll());
-
         modelAndView.addObject("genres", Genre.values());
-        modelAndView.addObject("movies", byName);
+        modelAndView.addObject("specMovie", bySpecification);
         return modelAndView;
-    }*/
+    }
+
 }

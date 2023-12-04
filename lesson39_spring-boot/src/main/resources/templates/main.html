@@ -5,6 +5,7 @@
     <title>Movie</title>
 </head>
 <body>
+<h3>Form for add movies</h3>
 <form th:action="@{/save}" method="post">
     <input type="text" name="name" placeholder="name of movie"/><br>
     <input type="number" min="1950" max="2023" step="1" name="yearRelease" placeholder="release" /><br>
@@ -14,31 +15,39 @@
     <div th:each="genre: ${genres}">
         <input th:type="radio" th:text="${genre.name()}"  th:value="${genre.name()}" th:name="genre"><br>
     </div>
-    <!--<c:forEach items="${genres}" var="genre">
-        <input type="radio" name="genre" value="${genre.name()}">${genre.name()}<br>
-    </c:forEach>-->
 
     <input type="submit" value="Save"><br>
 </form>
+<hr>
+<h3>List of movies:</h3>
 <div>
     <ul>
         <li th:each="movie: ${movies}">Name - [[${movie.name}]]; Genre - [[${movie.genre}]]; Release - [[${movie.yearRelease}]]; Rating - [[${movie.rating}]]</li>
     </ul>
+    <hr>
     <form th:action="@{/update/{id}(id=${movie.getId()})}" method="post" th:each="movie: ${movies}">
         Name - [[${movie.name}]]; Genre - [[${movie.genre}]]; Release - [[${movie.yearRelease}]]; Rating - [[${movie.rating}]]<br>
         <input type="number" th:value="${movie.getRating()}" min="1.0" max="10.0" name="rating" step="0.1">
         <input type="submit" value="Update">
     </form>
 </div>
+<hr>
+<h3>Form for search movies</h3>
+<form th:action="@{/search}" method="post">
+    <input type="text" name="name" placeholder="name of movie"/><br>
+    <input type="number" min="1.0" max="10.0" name="ratingFrom" step="0.1"placeholder="rating from"><br>
+    <input type="number" min="1.0" max="10.0" name="ratingTo" step="0.1"placeholder="rating to"><br>
+    <div th:each="genre: ${genres}">
+        <input th:type="radio" th:text="${genre.name()}"  th:value="${genre.name()}" th:name="genre"><br>
 
-
-
-<!--<ul>
-    <c:forEach items="${movies}" var="movie">
-        <li>Name: ${movie.name} Genre: ${movie.genre} Release: ${movie.yearRelease} Rating: ${movie.rating}</li>
-    </c:forEach>
-</ul>-->
-
+    </div>
+    <input type="submit" value="Search"><br>
+</form>
+<div>
+    <ul th:each="item: ${specMovie}">
+        <li>[[${item.name}]]</li>
+    </ul>
+</div>
 
 </body>
 </html>
