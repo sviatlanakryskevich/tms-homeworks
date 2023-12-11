@@ -1,13 +1,9 @@
 package com.tms.lesson43restblcar.entity;
-
 import com.tms.lesson43restblcar.domain.Model;
 import jakarta.persistence.*;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-
 
 @Data
 @NoArgsConstructor

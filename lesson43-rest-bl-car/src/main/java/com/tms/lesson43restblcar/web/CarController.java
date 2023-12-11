@@ -1,10 +1,8 @@
 package com.tms.lesson43restblcar.web;
-
 import com.tms.lesson43restblcar.dto.CarDto;
 import com.tms.lesson43restblcar.service.CarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -21,5 +19,10 @@ public class CarController {
     @GetMapping
     public List<CarDto> findAll(){
         return service.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public CarDto findById(@PathVariable(name = "id") Integer id){
+        return service.getById(id);
     }
 }

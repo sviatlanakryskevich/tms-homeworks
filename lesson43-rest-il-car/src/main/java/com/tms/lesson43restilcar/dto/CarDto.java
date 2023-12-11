@@ -1,5 +1,4 @@
 package com.tms.lesson43restilcar.dto;
-
 import com.tms.lesson43restilcar.domain.Model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
