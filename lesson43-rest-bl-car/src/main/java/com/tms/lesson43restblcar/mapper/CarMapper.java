@@ -1,9 +1,7 @@
 package com.tms.lesson43restblcar.mapper;
-
 import com.tms.lesson43restblcar.dto.CarDto;
 import com.tms.lesson43restblcar.entity.CarEntity;
 import org.mapstruct.Mapper;
-
 import java.util.List;
 
 @Mapper(componentModel = "spring")
