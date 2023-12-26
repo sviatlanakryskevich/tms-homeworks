@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -42,7 +43,7 @@ public class CarController {
                     )
             }
     )
-    public ResponseEntity<CarDto> save(@RequestBody CarDto dto){
+    public ResponseEntity<CarDto> save(@Valid @RequestBody CarDto dto){
 
         CarDto car = service.register(dto);
         return ResponseEntity.status(201).body(car);
