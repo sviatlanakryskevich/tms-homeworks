@@ -1,0 +1,11 @@
+project:
+  secretkey: jflasjfgwefowekfpoekekfljflasjfgwefowekfpoekekfljflasjfgwefowekfpoekekfljflasjfgwefowekfpoekekfl
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/rest-token
+    username: postgres
+    password: nikolaeva0628
+  jpa:
+    hibernate:
+      ddl-auto: create
